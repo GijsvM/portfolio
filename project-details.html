@@ -5,19 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Details - Gijs</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js" defer></script>
+    <script>
+        function switchLanguage(lang) {
+            localStorage.setItem('language', lang);
+            if (lang === 'nl') {
+                document.getElementById('project-title').innerText = 'Project Titel';
+                document.getElementById('home-link').innerText = 'Home';
+                document.getElementById('education-link').innerText = 'Opleiding';
+                document.getElementById('work-experience-link').innerText = 'Werkervaring';
+                document.getElementById('projects-link').innerText = 'Projecten';
+                document.getElementById('contact-link').innerText = 'Contact';
+                document.getElementById('project-description').innerText = 'Project Beschrijving';
+                document.getElementById('project-explanation').innerText = 'Project Uitleg';
+                document.getElementById('project-github').innerText = 'Bekijk op GitHub';
+            } else {
+                document.getElementById('project-title').innerText = 'Project Title';
+                document.getElementById('home-link').innerText = 'Home';
+                document.getElementById('education-link').innerText = 'Education';
+                document.getElementById('work-experience-link').innerText = 'Work Experience';
+                document.getElementById('projects-link').innerText = 'Projects';
+                document.getElementById('contact-link').innerText = 'Contact';
+                document.getElementById('project-description').innerText = 'Project Description';
+                document.getElementById('project-explanation').innerText = 'Project Explanation';
+                document.getElementById('project-github').innerText = 'View on GitHub';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const lang = localStorage.getItem('language') || 'en';
+            switchLanguage(lang);
+        });
+    </script>
 </head>
 <body>
     <header>
         <h1 id="project-title">Project Title</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="work-experience.html">Work Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a id="home-link" href="index.html">Home</a></li>
+                <li><a id="education-link" href="education.html">Education</a></li>
+                <li><a id="work-experience-link" href="work-experience.html">Work Experience</a></li>
+                <li><a id="projects-link" href="projects.html">Projects</a></li>
+                <li><a id="contact-link" href="contact.html">Contact</a></li>
             </ul>
+            <div class="language-switcher">
+                <button onclick="switchLanguage('en')">EN</button>
+                <button onclick="switchLanguage('nl')">NL</button>
+            </div>
         </nav>
     </header>
     <section id="project-details">

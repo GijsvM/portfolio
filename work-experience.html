@@ -6,18 +6,47 @@
     <title>Work Experience - Gijs</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function switchLanguage(lang) {
+            localStorage.setItem('language', lang);
+            if (lang === 'nl') {
+                document.getElementById('work-experience-title').innerText = 'Mijn Werkervaring';
+                document.getElementById('home-link').innerText = 'Home';
+                document.getElementById('education-link').innerText = 'Opleiding';
+                document.getElementById('work-experience-link').innerText = 'Werkervaring';
+                document.getElementById('projects-link').innerText = 'Projecten';
+                document.getElementById('contact-link').innerText = 'Contact';
+            } else {
+                document.getElementById('work-experience-title').innerText = 'My Work Experience';
+                document.getElementById('home-link').innerText = 'Home';
+                document.getElementById('education-link').innerText = 'Education';
+                document.getElementById('work-experience-link').innerText = 'Work Experience';
+                document.getElementById('projects-link').innerText = 'Projects';
+                document.getElementById('contact-link').innerText = 'Contact';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const lang = localStorage.getItem('language') || 'en';
+            switchLanguage(lang);
+        });
+    </script>
 </head>
 <body>
     <header>
-        <h1>My Work Experience</h1>
+        <h1 id="work-experience-title">My Work Experience</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="work-experience.html" class="active">Work Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a id="home-link" href="index.html">Home</a></li>
+                <li><a id="education-link" href="education.html">Education</a></li>
+                <li><a id="work-experience-link" href="work-experience.html" class="active">Work Experience</a></li>
+                <li><a id="projects-link" href="projects.html">Projects</a></li>
+                <li><a id="contact-link" href="contact.html">Contact</a></li>
             </ul>
+            <div class="language-switcher">
+                <button onclick="switchLanguage('en')">EN</button>
+                <button onclick="switchLanguage('nl')">NL</button>
+            </div>
         </nav>
     </header>
     <section id="work-experience">
@@ -80,34 +109,6 @@
             </div>
             <div class="sub-work-item">
                 <p><strong>Feestcommissie Lid</strong> | September 2024 - February 2025</p>
-                <p>Responsibilities:</p>
-                <ul>
-                    <li>Stocking shelves and ensuring products are displayed neatly.</li>
-                    <li>Assisting customers with finding products.</li>
-                    <li>Maintaining a clean and organized store environment.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="work-item">
-            <h3>
-                <i class="fas fa-shopping-cart"></i>
-                  PLUS van de Huijgevoort
-                <span class="work-links">
-                    <a href="https://www.plus.nl" target="_blank"><i class="fas fa-globe"></i></a>
-                    <a href="https://www.linkedin.com/company/plus" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </span>
-            </h3>
-            <div class="sub-work-item">
-                <p><strong>Vulploegleider</strong> | May 2023 - March 2024</p>
-                <p>Responsibilities:</p>
-                <ul>
-                    <li>Leading a team of stockers and ensuring tasks are completed efficiently.</li>
-                    <li>Training new employees and providing ongoing support.</li>
-                    <li>Managing inventory and coordinating with suppliers.</li>
-                </ul>
-            </div>
-            <div class="sub-work-item">
-                <p><strong>Vuller</strong> | January 2019 - December 2019</p>
                 <p>Responsibilities:</p>
                 <ul>
                     <li>Stocking shelves and ensuring products are displayed neatly.</li>

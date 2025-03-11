@@ -91,7 +91,7 @@ section {
     font-size: 2em;
 }
 
-.social-media a:hover {
+social-media a:hover {
     color: #555;
 }
 
@@ -299,6 +299,19 @@ footer {
     background-color: rgba(0,0,0,0.8);
 }
 
+.language-switcher {
+    position: absolute;
+    top: -45%;
+    right: 30px;
+    transform: translateY(-50%);
+}
+.language-switcher button {
+    margin-left: 5px;
+}
+nav {
+    position: relative;
+}
+
 @media (max-width: 600px) {
     nav {
         flex-direction: column;
@@ -321,4 +334,44 @@ footer {
     .about-left {
         text-align: left;
     }
+}
+
+/* New styles for contact form */
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #2a2a2a; /* Adjust this color to be a tint lighter than your background */
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #e0e0e0; /* Set the text color to white */
+}
+
+#contact-form textarea {
+    height: 250px; /* Set the height of the message box */
+}
+
+#contact-form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #555;
+}
+
+#contact-info a {
+    color: #d879d3;
+    text-decoration: none;
+}
+
+#contact-info a:hover {
+    text-decoration: underline;
 }

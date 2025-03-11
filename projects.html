@@ -5,18 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Gijs</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function switchLanguage(lang) {
+            localStorage.setItem('language', lang);
+            if (lang === 'nl') {
+                document.getElementById('projects-title').innerText = 'Mijn Projecten';
+                document.getElementById('home-link').innerText = 'Home';
+                document.getElementById('education-link').innerText = 'Opleiding';
+                document.getElementById('work-experience-link').innerText = 'Werkervaring';
+                document.getElementById('projects-link').innerText = 'Projecten';
+                document.getElementById('contact-link').innerText = 'Contact';
+            } else {
+                document.getElementById('projects-title').innerText = 'My Projects';
+                document.getElementById('home-link').innerText = 'Home';
+                document.getElementById('education-link').innerText = 'Education';
+                document.getElementById('work-experience-link').innerText = 'Work Experience';
+                document.getElementById('projects-link').innerText = 'Projects';
+                document.getElementById('contact-link').innerText = 'Contact';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const lang = localStorage.getItem('language') || 'en';
+            switchLanguage(lang);
+        });
+    </script>
 </head>
 <body>
     <header>
-        <h1>My Projects</h1>
+        <h1 id="projects-title">My Projects</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="work-experience.html">Work Experience</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a id="home-link" href="index.html">Home</a></li>
+                <li><a id="education-link" href="education.html">Education</a></li>
+                <li><a id="work-experience-link" href="work-experience.html">Work Experience</a></li>
+                <li><a id="projects-link" href="projects.html" class="active">Projects</a></li>
+                <li><a id="contact-link" href="contact.html">Contact</a></li>
             </ul>
+            <div class="language-switcher">
+                <button onclick="switchLanguage('en')">EN</button>
+                <button onclick="switchLanguage('nl')">NL</button>
+            </div>
         </nav>
     </header>
     <section id="project-showcase">

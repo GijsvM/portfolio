@@ -6,18 +6,49 @@
     <title>Portfolio - Gijs</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function switchLanguage(lang) {
+            localStorage.setItem('language', lang);
+            if (lang === 'nl') {
+                document.getElementById('welcome-title').innerText = 'Welkom bij mijn portfolio';
+                document.getElementById('about-title').innerText = 'Over mij';
+                document.getElementById('home-link').innerText = 'Home';
+                document.getElementById('education-link').innerText = 'Opleiding';
+                document.getElementById('work-experience-link').innerText = 'Werkervaring';
+                document.getElementById('projects-link').innerText = 'Projecten';
+                document.getElementById('contact-link').innerText = 'Contact';
+            } else {
+                document.getElementById('welcome-title').innerText = 'Welcome to My Portfolio';
+                document.getElementById('about-title').innerText = 'About Me';
+                document.getElementById('home-link').innerText = 'Home';
+                document.getElementById('education-link').innerText = 'Education';
+                document.getElementById('work-experience-link').innerText = 'Work Experience';
+                document.getElementById('projects-link').innerText = 'Projects';
+                document.getElementById('contact-link').innerText = 'Contact';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const lang = localStorage.getItem('language') || 'en';
+            switchLanguage(lang);
+        });
+    </script>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <h1 id="welcome-title">Welcome to My Portfolio</h1>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="work-experience.html">Work Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a id="home-link" href="index.html" class="active">Home</a></li>
+                <li><a id="education-link" href="education.html">Education</a></li>
+                <li><a id="work-experience-link" href="work-experience.html">Work Experience</a></li>
+                <li><a id="projects-link" href="projects.html">Projects</a></li>
+                <li><a id="contact-link" href="contact.html">Contact</a></li>
             </ul>
+            <div class="language-switcher">
+                <button onclick="switchLanguage('en')">EN</button>
+                <button onclick="switchLanguage('nl')">NL</button>
+            </div>
         </nav>
     </header>
     <section id="about">
@@ -35,7 +66,7 @@
                 </div>
             </div>
             <div class="about-right">
-                <h2>About Me</h2>
+                <h2 id="about-title">About Me</h2>
                 <p>Hello! My name is Gijs. I am a passionate developer with experience in various programming languages and technologies. I enjoy creating innovative solutions and continuously learning new skills.</p>
             </div>
         </div>
